@@ -28,7 +28,7 @@ sudo bash Install_RNA_seq_to_TPM_STAR.sh
 pipelines # This shows installed pipelines
 
 ```
-4. show help content
+4. show help contents
 ```
 RNA_seq_to_TPM_STAR # this will show the following help contents
 ```
