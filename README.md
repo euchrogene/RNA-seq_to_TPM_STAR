@@ -1,5 +1,16 @@
 # This is for EuchroGene customers.
 
+This is a pipeline to process RNA-seq raw data using AdapterRemoval (by default), map RNA-seq reads to the target gene using STAR, and calculate TPM, FPKM, and counts using RSEM.
+
+To use this pipeline, all RNA-seq data should be stored in a folder, and the folder path must be provided as the input to '-seq_path'.
+
+** The input ref_seq of STAR version is the genome sequence and the GFF file (important). **
+
+STAR is recommended to analyze RNA-seq data, but if you don't have a GFF file or it raises an error, you can use the Bowtie2 version in this repository.
+
+The counts data can be used for PyDESeq2 in this repository.
+
+
 ## To install:
 
 1. get the installation file:
