@@ -11,7 +11,7 @@ STAR is recommended to analyze RNA-seq data, but if you don't have a GFF file or
 The counts data can be used for PyDESeq2 in this repository.
 
 
-## To install:
+## To install, copy and paste the following commands in a Jupyter Terminal, and execute:
 
 1. get the installation file:
 ```
