@@ -4,7 +4,7 @@
 REPO_URL="https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git"
 REPO_DIR="RNA-seq_to_TPM_STAR"
 EXE_FILE="RNA-seq_to_TPM_STAR"
-PIPELINE_ENTRY="$EXE_FILE => A pipeline to process RNA-seqs to get TPM, FPKM, and Count data using STAR mapper"
+PIPELINE_ENTRY="$EXE_FILE => A pipeline to process RNA-seqs to get TPM, FPKM, and Count data using AdapterRemoval=>STAR=>RSEM"
 
 TARGET_BIN="/usr/bin"
 DATA_FILE="/usr/share/euchrogene_pipelines.txt"
