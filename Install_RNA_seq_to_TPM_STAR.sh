@@ -46,5 +46,7 @@ EOF"
 
 sudo chmod +x "$VIEWER_SCRIPT"
 
+echo ""
 echo "Success! Installation complete and temporary files removed."
+echo ""
 echo "If you wnat delete the pipeline list not used anymore, open the file in /usr/share/euchrogene_pipelines.txt and revise it."
