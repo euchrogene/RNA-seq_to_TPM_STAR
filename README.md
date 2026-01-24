@@ -13,24 +13,20 @@ The counts data can be used for PyDESeq2 in this repository.
 
 ## To install, copy and paste the following commands in a Jupyter Terminal, and execute:
 
-1. get the installation file:
+1. install the pipeline:
 ```
 wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/Install_RNA_seq_to_TPM_STAR.sh
-```
-
-2. install the pipeline:
-```
 sudo bash Install_RNA_seq_to_TPM_STAR.sh
 ```
 
-3. check installation
+2. display installed pipelines (or software)
 ```
-pipelines # This shows installed pipelines
+pipelines
 
 ```
-4. show help contents
+3. show help contents
 ```
-RNA_seq_to_TPM_STAR # this will show the following help contents
+RNA_seq_to_TPM_STAR
 ```
 
 ## Help contents:
