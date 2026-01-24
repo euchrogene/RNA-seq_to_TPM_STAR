@@ -17,6 +17,7 @@ The counts data can be used for PyDESeq2 in this repository.
 ```
 wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/Install_RNA_seq_to_TPM_STAR.sh
 sudo bash Install_RNA_seq_to_TPM_STAR.sh
+rm Install_RNA_seq_to_TPM_STAR.sh
 ```
 
 2. display installed pipelines (or software)
