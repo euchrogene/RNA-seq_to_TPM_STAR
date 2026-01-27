@@ -8,7 +8,7 @@ PIPELINE_ENTRY="$EXE_FILE => A pipeline to process RNA-seqs to get TPM, FPKM, an
 
 TARGET_BIN="/usr/bin"
 DATA_FILE="/usr/share/euchrogene_tools.txt"
-VIEWER_SCRIPT="$TARGET_BIN/eg-tools"
+VIEWER_SCRIPT="$TARGET_BIN/EG_tools"
 
 echo "Step 1: Downloading repository..."
 # Clean up any previous failed attempts first
