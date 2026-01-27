@@ -20,7 +20,7 @@ sudo bash Install_RNA_seq_to_TPM_STAR.sh
 rm Install_RNA_seq_to_TPM_STAR.sh
 ```
 
-2. display installed pipelines (or software)
+2. display installed software
 ```
 eg-tools
 
