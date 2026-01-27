@@ -22,7 +22,7 @@ rm Install_RNA_seq_to_TPM_STAR.sh
 
 2. display installed pipelines (or software)
 ```
-pipelines
+eg-tools
 
 ```
 3. show help contents
