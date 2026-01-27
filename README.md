@@ -2,7 +2,7 @@
 
 This is a pipeline to process RNA-seq raw data using AdapterRemoval (by default), map RNA-seq reads to the target gene using STAR, and calculate TPM, FPKM, and counts using RSEM.
 
-To use this pipeline, all RNA-seq data should be stored in a folder, and the folder path must be provided as the input to '-seq_path'.
+To use this pipeline, all RNA-seq data should be stored in a folder, and the folder path must be provided as the input to '-seq_folder'.
 
 ** The input ref_seq of STAR version is the genome sequence and the GFF file (important). **
 
@@ -46,16 +46,16 @@ The pipeline consists of building an index, running RSEM, and parsing RSEM resul
 You can run this pipeline by following these methods:
 
 1) simple run for paired-end sequences
-   example: RNA_seq_to_TPM_STAR -seq_path RNA-seq_data -ref_seq CDS_seq.fa -build_index 2
+   example: RNA_seq_to_TPM_STAR -seq_folder RNA-seq_data -ref_seq CDS_seq.fa -build_index 2
 
 2) skip AdapterRemoval and run all the rest of the steps: use all options
-   example: RNA_seq_to_TPM_STAR -skip_filtering 2 -build_index 2 -seq_path RNA-seq_data -ref_seq CDS_seq.fa
+   example: RNA_seq_to_TPM_STAR -skip_filtering 2 -build_index 2 -seq_folder RNA-seq_data -ref_seq CDS_seq.fa
             
 3) skip build index: set '-build_index' option as '1' and use all options
-   example: RNA_seq_to_TPM_STAR -build_index 1 -seq_path RNA-seq_data -ref_seq CDS_seq.fa
+   example: RNA_seq_to_TPM_STAR -build_index 1 -seq_folder RNA-seq_data -ref_seq CDS_seq.fa
 
 4) only parse RSEM results: set '-parsing_only' option as '2'
-   example: RNA_seq_to_TPM_STAR -seq_path RNA-seq_data -parsing_only 2 
+   example: RNA_seq_to_TPM_STAR -seq_folder RNA-seq_data -parsing_only 2 
 
 ________________________________________________________________________________________________
 
@@ -65,7 +65,7 @@ Usage;
 -skip_filtering (option)    1: no (Default, run AdapterRemoval), 2: yes (skip filtering)
 -gff            (required)  gff file name
 -ref_seq        (required)  ref seq file name (index file name must be the same as ref seq name)
--seq_path       (required)  folder path that contains RNA-seqs (compressed file can be used)
+-seq_folder     (required)  folder name that contains RNA-seqs (compressed file can be used)
 -build_index    (option)    1: no (default), 2: yes
 -paired         (option)    1: paired-end (default), 2: single-end 
 -parsing_only   (option)    1: run all steps (default), 2: parsing the RSEM results only
