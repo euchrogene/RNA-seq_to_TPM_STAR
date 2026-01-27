@@ -1,4 +1,4 @@
-# This is for EuchroGene customers.
+# This is for EuchroGene RNA_seq_to_TPM_Bowtie2.py.
 
 This is a pipeline to process RNA-seq raw data using AdapterRemoval (by default), map RNA-seq reads to the target gene using STAR, and calculate TPM, FPKM, and counts using RSEM.
 
