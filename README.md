@@ -84,7 +84,7 @@ ________________________________________________________________________________
 4. To uninstall the old version
 ```
 wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/EG_uninstall.sh
-sudo bash EG_uninstall.sh -t RNA_seq_to_TPM_STAR -i managene7/rna-seq_to_tpm_deseq2:v.1.0
+sudo bash EG_uninstall.sh -t RNA-seq_to_TPM_STAR -i managene7/rna-seq_to_tpm_deseq2:v.1.0
 rm EG_uninstall.sh
 ```
 
