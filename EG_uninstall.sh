@@ -43,10 +43,8 @@ fi
 
 echo "[3/3] Updating registered tool list..."
 if [ -f "$DATA_FILE" ]; then
-    # 해당 툴 항목 삭제
     sudo sed -i "/$EXE_FILE/d" "$DATA_FILE"
     
-    # 만약 파일이 비어있다면 전체 환경 정리
     if [ ! -s "$DATA_FILE" ]; then
         echo "  >> No tools remaining. Removing EG_tools viewer and database."
         sudo rm "$DATA_FILE"
