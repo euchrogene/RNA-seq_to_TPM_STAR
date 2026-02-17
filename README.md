@@ -17,11 +17,16 @@ The counts data can be used for PyDESeq2 in this repository.
 
 ## To install, copy and paste the following commands in a Jupyter Terminal, and execute:
 
+0. Install EG_tools (If this is already installed, skip this step)
+```
+wget https://github.com/euchrogene/EG_tools/raw/refs/heads/main/EG_tools
+sudo chmod 777 EG_tools
+sudo mv EG_tools /usr/bin
+```
+
 1. install the pipeline:
 ```
-wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/Install_RNA_seq_to_TPM_STAR.sh
-sudo bash Install_RNA_seq_to_TPM_STAR.sh
-rm Install_RNA_seq_to_TPM_STAR.sh
+sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA-seq_to_TPM_STAR -e RNA-seq_to_TPM_STAR_v.1.0 -m "RNA-seq_to_TPM_STAR_v.1.0 => A pipeline to process RNA-seqs to get TPM, FPKM, and Count data using AdapterRemoval=>STAR=>RSEM"
 ```
 
 2. display installed software
@@ -83,16 +88,12 @@ ________________________________________________________________________________
 
 4. To uninstall the old version
 ```
-wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/EG_uninstall.sh
-sudo bash EG_uninstall.sh -t RNA-seq_to_TPM_STAR -i managene7/rna-seq_to_tpm_deseq2:v.1.0
-rm EG_uninstall.sh
+sudo EG_tools uninstall -t RNA-seq_to_TPM_STAR -i managene7/rna-seq_to_tpm_deseq2:v.1.0
 ```
 
 5. To uninstall the v.1.0
 ```
-wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/EG_uninstall.sh
-sudo bash EG_uninstall.sh -t RNA_seq_to_TPM_STAR_v.1.0 -i managene7/rna-seq_to_tpm_deseq2:v.1.0
-rm EG_uninstall.sh
+sudo EG_tools uninstall -t RNA_seq_to_TPM_STAR_v.1.0 -i managene7/rna-seq_to_tpm_deseq2:v.1.0
 ```
 
 # Citation
