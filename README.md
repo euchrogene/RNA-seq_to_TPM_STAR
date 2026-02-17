@@ -1,12 +1,16 @@
+# Update notice
+The RNA_seq_to_TPM_STAR is updated to RNA_seq_to_TPM_Bowtie2_v.1.0
+It generates a draft Method script for publication and fixed bugs.
+
 # This is for EuchroGene RNA_seq_to_TPM_Bowtie2.py.
 
-This is a pipeline to process RNA-seq raw data using AdapterRemoval (by default), map RNA-seq reads to the target gene using STAR, and calculate TPM, FPKM, and counts using RSEM.
+This pipeline processes raw RNA-seq data using AdapterRemoval (by default), maps RNA-seq reads to the target gene using STAR, and calculates TPM, FPKM, and counts using RSEM.
 
 To use this pipeline, all RNA-seq data should be stored in a folder, and the folder path must be provided as the input to '-seq_folder'.
 
 ** The input ref_seq of STAR version is the genome sequence and the GFF file (important). **
 
-STAR is recommended to analyze RNA-seq data, but if you don't have a GFF file or it raises an error, you can use the Bowtie2 version in this repository.
+STAR is recommended for analyzing RNA-seq data, but if you don't have a GFF file or it fails, you can use the Bowtie2 version in this repository.
 
 The counts data can be used for PyDESeq2 in this repository.
 
