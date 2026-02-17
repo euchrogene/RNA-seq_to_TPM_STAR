@@ -23,43 +23,39 @@ if [ -z "$EXE_FILE" ] || [ -z "$DOCKER_IMAGE" ]; then
     usage
 fi
 
-echo "--- EuchroGene Universal Uninstaller ---"
+echo "--- EuchroGene Tool Removal Process ---"
 
-echo "[1/4] Checking Docker image: $DOCKER_IMAGE"
+echo "[1/3] Removing Docker image: $DOCKER_IMAGE"
 if [[ "$(sudo docker images -q "$DOCKER_IMAGE" 2> /dev/null)" != "" ]]; then
     sudo docker rmi -f "$DOCKER_IMAGE"
-    echo "  >> Docker image deleted."
+    echo "  >> Done."
 else
     echo "  >> Image not found, skipping."
 fi
 
-echo "[2/4] Removing wrapper: $TARGET_BIN/$EXE_FILE"
+echo "[2/3] Deleting wrapper from system path: $TARGET_BIN/$EXE_FILE"
 if [ -f "$TARGET_BIN/$EXE_FILE" ]; then
     sudo rm "$TARGET_BIN/$EXE_FILE"
-    echo "  >> Wrapper removed."
+    echo "  >> Done."
 else
     echo "  >> Wrapper not found."
 fi
 
-echo "[3/4] Updating registry: $DATA_FILE"
+echo "[3/3] Updating registered tool list..."
 if [ -f "$DATA_FILE" ]; then
-    # 정확한 매칭을 위해 sed 사용
+    # 해당 툴 항목 삭제
     sudo sed -i "/$EXE_FILE/d" "$DATA_FILE"
-    echo "  >> Registry updated."
-fi
-
-echo "[4/4] Checking for remaining tools..."
-if [ -f "$DATA_FILE" ]; then
+    
+    # 만약 파일이 비어있다면 전체 환경 정리
     if [ ! -s "$DATA_FILE" ]; then
-        echo "  >> No more tools left. Cleaning up global scripts."
+        echo "  >> No tools remaining. Removing EG_tools viewer and database."
         sudo rm "$DATA_FILE"
         sudo rm "$VIEWER_SCRIPT"
     else
-        echo "  >> Other tools remain. Keeping $VIEWER_SCRIPT."
-        echo "--- Remaining Tools ---"
-        cat "$DATA_FILE"
+        echo "  >> Tool removed from list. Other tools still available."
     fi
 fi
 
 echo "---------------------------------------"
 echo "Uninstallation of $EXE_FILE complete."
+echo "Note: This script (eg_uninstall.sh) was not copied to your system path."
