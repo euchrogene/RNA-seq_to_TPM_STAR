@@ -17,7 +17,7 @@ The counts data can be used for PyDESeq2 in this repository.
 
 ## To install, copy and paste the following commands in a Jupyter Terminal, and execute:
 
-0. Install EG_tools (If this is already installed, skip this step)
+0. Install EG_tools (*** If this is already installed, skip this step ***)
 ```
 wget https://github.com/euchrogene/EG_tools/raw/refs/heads/main/EG_tools
 sudo chmod 777 EG_tools
