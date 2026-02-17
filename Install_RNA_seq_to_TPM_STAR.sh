@@ -18,7 +18,7 @@ git clone "$REPO_URL"
 echo "Step 2 & 3: Installing executables..."
 cd "$REPO_DIR" || exit
 chmod +x *
-sudo cp * "$TARGET_BIN/"
+sudo cp "$EXE_FILE" "$TARGET_BIN/"
 
 echo "Step 4: Removing the downloaded repository folder..."
 cd ..
