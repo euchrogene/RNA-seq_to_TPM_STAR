@@ -27,14 +27,14 @@ EG_tools
 ```
 3. show help contents
 ```
-RNA_seq_to_TPM_STAR
+RNA_seq_to_TPM_STAR_v.1.0
 ```
 
 ## Help contents:
 ```
 ________________________________________________________________________________________________
 
-Pipeline: AdapterRemoval => STAR => RSEM
+Pipeline: AdapterRemoval => STAR => RSEM - Production Level
 
 RSEM is a pipeline to calculate counts, TPM, and FPKM from genes or transcripts.
 This pipeline fully automates RSEM from the build index through mapping and parsing RSEM results.
@@ -45,35 +45,51 @@ ________________________________________________________________________________
 The pipeline consists of building an index, running RSEM, and parsing RSEM results.
 You can run this pipeline by following these methods:
 
-1) simple run for paired-end sequences
-   example: RNA_seq_to_TPM_STAR -seq_folder RNA-seq_data -ref_seq CDS_seq.fa -build_index 2
+1) Simple run for paired-end sequences
+   example: RNA_seq_to_TPM_STAR_v.1.0 -seq_folder RNA-seq_data -ref_seq CDS_seq.fa \\
+            -gff annotation.gff -build_index 2
 
-2) skip AdapterRemoval and run all the rest of the steps: use all options
-   example: RNA_seq_to_TPM_STAR -skip_filtering 2 -build_index 2 -seq_folder RNA-seq_data -ref_seq CDS_seq.fa
+2) Skip AdapterRemoval and run all the rest of the steps
+   example: RNA_seq_to_TPM_STAR_v.1.0 -skip_filtering 2 -build_index 2 -seq_folder RNA-seq_data \\
+            -ref_seq CDS_seq.fa -gff annotation.gff
             
-3) skip build index: set '-build_index' option as '1' and use all options
-   example: RNA_seq_to_TPM_STAR -build_index 1 -seq_folder RNA-seq_data -ref_seq CDS_seq.fa
+3) Skip build index and run all the rest of the steps
+   example: RNA_seq_to_TPM_STAR_v.1.0 -build_index 1 -seq_folder RNA-seq_data \\
+            -ref_seq CDS_seq.fa -gff annotation.gff
 
-4) only parse RSEM results: set '-parsing_only' option as '2'
-   example: RNA_seq_to_TPM_STAR -seq_folder RNA-seq_data -parsing_only 2 
+4) Only parse RSEM results
+   example: RNA_seq_to_TPM_STAR_v.1.0 -seq_folder RNA-seq_data -parsing_only 2 
 
 ________________________________________________________________________________________________
 
-Usage;
+Usage:
 
 -help                       show options
 -skip_filtering (option)    1: no (Default, run AdapterRemoval), 2: yes (skip filtering)
--gff            (required)  gff file name
--ref_seq        (required)  ref seq file name (index file name must be the same as ref seq name)
--seq_folder     (required)  folder name that contains RNA-seqs (compressed file can be used)
 -build_index    (option)    1: no (default), 2: yes
+-gff            (required)  GFF/GTF annotation file name
+-ref_seq        (required)  reference genome file name
+-seq_folder     (required)  folder name that contains RNA-seqs (compressed files supported)
 -paired         (option)    1: paired-end (default), 2: single-end 
 -parsing_only   (option)    1: run all steps (default), 2: parsing the RSEM results only
--target         (option)    1: transcripts including isotypes, 2: representative genes (default is 1)
--cores          (option)    number of cores for RSEM (default is 32)
+-target         (option)    1: transcripts including isotypes (default), 2: representative genes
+-cores          (option)    number of cores for RSEM (default: 32)
 ______________________________________________________________________________________________
 ```
 
+4. To uninstall the old version
+```
+wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/EG_uninstall.sh
+sudo bash EG_uninstall.sh -t RNA_seq_to_TPM_STAR -i managene7/rna-seq_to_tpm_deseq2:v.1.0
+rm EG_uninstall.sh
+```
+
+5. To uninstall the v.1.0
+```
+wget https://github.com/euchrogene/RNA-seq_to_TPM_STAR/raw/refs/heads/main/EG_uninstall.sh
+sudo bash EG_uninstall.sh -t RNA_seq_to_TPM_STAR_v.1.0 -i managene7/rna-seq_to_tpm_deseq2:v.1.0
+rm EG_uninstall.sh
+```
 
 # Citation
 
