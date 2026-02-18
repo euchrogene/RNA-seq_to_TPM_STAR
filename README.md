@@ -93,7 +93,7 @@ sudo EG_tools uninstall -t RNA-seq_to_TPM_STAR -i managene7/rna-seq_to_tpm_deseq
 
 5. To uninstall the v.1.0
 ```
-sudo EG_tools uninstall -t RNA_seq_to_TPM_STAR_v.1.0 -i managene7/rna-seq_to_tpm_deseq2:v.1.0
+sudo EG_tools uninstall -t RNA_seq_to_TPM_STAR_v.1.0 -i managene7/rna-seq_to_tpm_deseq2:v.1.1
 ```
 
 # Citation
