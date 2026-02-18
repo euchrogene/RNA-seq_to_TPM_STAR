@@ -26,7 +26,7 @@ sudo mv EG_tools /usr/bin
 
 1. install the pipeline:
 ```
-sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA_seq_to_TPM_STAR -e RNA-seq_to_TPM_STAR_v.1.0 -m "A pipeline to process RNA-seqs to get TPM, FPKM, and Count data using AdapterRemoval=>STAR=>RSEM"
+sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA-seq_to_TPM_STAR -e RNA_seq_to_TPM_STAR_v.1.0 -m "A pipeline to process RNA-seqs to get TPM, FPKM, and Count data using AdapterRemoval=>STAR=>RSEM"
 ```
 
 2. display installed software
