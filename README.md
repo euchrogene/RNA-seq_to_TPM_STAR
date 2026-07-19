@@ -19,7 +19,7 @@ sudo mv EG_tools /usr/bin
 
 ### 1. Install
 ```
-sudo EG_tools install -r https://github.com/euchrogene/RNA_seq_to_TPM_STAR.git -d RNA_seq_to_TPM_STAR -e RNA_seq_to_TPM_STAR_v.2.0 -m "Genome-based RNA-seq quantification with STAR and RSEM"
+sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA-seq_to_TPM_STAR -e RNA_seq_to_TPM_STAR_v.2.0 -m "Genome-based RNA-seq quantification with STAR and RSEM"
 ```
 
 ### 2. Display installed software
