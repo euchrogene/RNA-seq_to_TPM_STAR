@@ -4,7 +4,7 @@
 
 Genome-based RNA-seq quantification with [STAR](https://doi.org/10.1093/bioinformatics/bts635) and [RSEM](https://doi.org/10.1186/1471-2105-12-323). Reads are aligned in splice-aware mode and abundances estimated by expectation-maximization, so multi-mapping reads are assigned probabilistically. Because alignments carry genome coordinates, the pipeline also emits **JBrowse2-ready coverage tracks** and optional splice-junction tracks.
 
-Use **`RNA_seq_to_TPM_STAR_v.3.0`** for FASTQ-only, SRA-only and combined
+Use **`RNA-seq_to_TPM_STAR_v.3.0`** for FASTQ-only, SRA-only and combined
 FASTQ + SRA input.
 SRA downloads, FASTQ conversion, trimming, alignment and quantification use the
 single Docker image **`managene7/star-rsem:v3.0`**, built from **`Dockerfile`**.
@@ -42,11 +42,11 @@ sudo mv EG_tools /usr/bin
 
 `EG_tools` installs the version published in the distribution repository. For
 unpublished local changes, use the locally built executable shown below.
-Publish `RNA_seq_to_TPM_STAR_v.3.0` in that repository before using this installer
+Publish `RNA-seq_to_TPM_STAR_v.3.0` in that repository before using this installer
 command for the renamed executable.
 
 ```bash
-sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA-seq_to_TPM_STAR -e RNA_seq_to_TPM_STAR_v.3.0 -m "SRA download and RNA-seq quantification with STAR and RSEM"
+sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA-seq_to_TPM_STAR -e RNA-seq_to_TPM_STAR_v.3.0 -m "SRA download and RNA-seq quantification with STAR and RSEM"
 ```
 
 ### 2. Display installed software
@@ -58,13 +58,13 @@ EG_tools
 ### 3. Show help contents
 
 ```bash
-RNA_seq_to_TPM_STAR_v.3.0 -help
+RNA-seq_to_TPM_STAR_v.3.0 -help
 ```
 
 ### 4. Uninstall
 
 ```bash
-sudo EG_tools uninstall -t RNA_seq_to_TPM_STAR_v.3.0 -i managene7/star-rsem:v3.0
+sudo EG_tools uninstall -t RNA-seq_to_TPM_STAR_v.3.0 -i managene7/star-rsem:v3.0
 ```
 
 ---
@@ -73,30 +73,30 @@ sudo EG_tools uninstall -t RNA_seq_to_TPM_STAR_v.3.0 -i managene7/star-rsem:v3.0
 
 ```bash
 # Standard run (index is built automatically if missing)
-RNA_seq_to_TPM_STAR_v.3.0 -seq_folder reads -ref_seq genome.fa -gff annotation.gff
+RNA-seq_to_TPM_STAR_v.3.0 -seq_folder reads -ref_seq genome.fa -gff annotation.gff
 
 # Download SRA runs and quantify them with the same command
-RNA_seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -ref_seq genome.fa -gff annotation.gff
+RNA-seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -ref_seq genome.fa -gff annotation.gff
 
 # Download FASTQ only, without a reference genome
-RNA_seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -download_only true
+RNA-seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -download_only true
 
 # Large server, matrices only: no genome BAM, fastest and lightest on disk
-RNA_seq_to_TPM_STAR_v.3.0 -seq_folder reads -ref_seq genome.fa \
+RNA-seq_to_TPM_STAR_v.3.0 -seq_folder reads -ref_seq genome.fa \
     -gff annotation.gff -cores 96 -max_mem 240 -jbrowse false
 
 # Reads already trimmed, custom output folder
-RNA_seq_to_TPM_STAR_v.3.0 -seq_folder reads_filtered -ref_seq genome.fa \
+RNA-seq_to_TPM_STAR_v.3.0 -seq_folder reads_filtered -ref_seq genome.fa \
     -gff annotation.gff -filtering false -out project_output
 
 # Add splice-junction bigBed tracks
-RNA_seq_to_TPM_STAR_v.3.0 -seq_folder reads -ref_seq genome.fa \
+RNA-seq_to_TPM_STAR_v.3.0 -seq_folder reads -ref_seq genome.fa \
     -gff annotation.gff -junctions true
 ```
 
-Run `RNA_seq_to_TPM_STAR_v.3.0 -help` for the full option list.
-For a local build, use `./dist/RNA_seq_to_TPM_STAR_v.3.0`; for source execution, use
-`python RNA_seq_to_TPM_STAR_v.3.0.py`. All examples use the same entry point.
+Run `RNA-seq_to_TPM_STAR_v.3.0 -help` for the full option list.
+For a local build, use `./dist/RNA-seq_to_TPM_STAR_v.3.0`; for source execution, use
+`python RNA-seq_to_TPM_STAR_v.3.0.py`. All examples use the same entry point.
 
 ---
 
@@ -124,11 +124,11 @@ Pass both `-seq_folder` and `-sra_list` to analyze existing local FASTQ and SRA 
 and merge their gene/transcript Count and TPM matrices. Both entry points support this.
 
 ```bash
-RNA_seq_to_TPM_STAR_v.3.0 -seq_folder reads -sra_list runs.txt \
+RNA-seq_to_TPM_STAR_v.3.0 -seq_folder reads -sra_list runs.txt \
     -ref_seq genome.fa -gff annotation.gff -out combined_results
 
 # Optional dedicated SRA download workspace
-RNA_seq_to_TPM_STAR_v.3.0 -seq_folder reads -sra_list runs.txt \
+RNA-seq_to_TPM_STAR_v.3.0 -seq_folder reads -sra_list runs.txt \
     -sra_folder sra_downloads -ref_seq genome.fa -gff annotation.gff \
     -out combined_results
 ```
@@ -165,7 +165,7 @@ RNA_seq_to_TPM_STAR_v.3.0 -seq_folder reads -sra_list runs.txt \
 
 ## SRA input
 
-`RNA_seq_to_TPM_STAR_v.3.0` accepts an SRA accession list through `-sra_list`.
+`RNA-seq_to_TPM_STAR_v.3.0` accepts an SRA accession list through `-sra_list`.
 For SRA input it runs `prefetch → fasterq-dump → pigz` in the STAR–RSEM image,
 then invokes its own FASTQ mode for AdapterRemoval, STAR and RSEM. The compiled
 launcher includes both acquisition and quantification orchestration. Both stages
@@ -189,14 +189,14 @@ mate suffix pairs are `_1,_2`, `_R1,_R2` and `.1,.2`.
 
 ```bash
 # Quantify in batches; default batch size follows the planned parallelism
-RNA_seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -ref_seq genome.fa \
+RNA-seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -ref_seq genome.fa \
     -gff annotation.gff -out experiment_results -batch_size 4
 
 # Download only; no reference genome or annotation required
-RNA_seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -download_only true
+RNA-seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -download_only true
 
 # Preserve FASTQ, SRA archives and genome BAM files
-RNA_seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -ref_seq genome.fa \
+RNA-seq_to_TPM_STAR_v.3.0 -sra_list runs.txt -ref_seq genome.fa \
     -gff annotation.gff -cleanup none -keep_sra true -keep_bam true
 ```
 
