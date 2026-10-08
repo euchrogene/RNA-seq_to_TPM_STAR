@@ -46,7 +46,7 @@ Publish `RNA_seq_to_TPM_STAR_v.3.0` in that repository before using this install
 command for the renamed executable.
 
 ```bash
-sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA_seq_to_TPM_STAR -e RNA_seq_to_TPM_STAR_v.3.0 -m "SRA download and RNA-seq quantification with STAR and RSEM"
+sudo EG_tools install -r https://github.com/euchrogene/RNA-seq_to_TPM_STAR.git -d RNA-seq_to_TPM_STAR -e RNA_seq_to_TPM_STAR_v.3.0 -m "SRA download and RNA-seq quantification with STAR and RSEM"
 ```
 
 ### 2. Display installed software
